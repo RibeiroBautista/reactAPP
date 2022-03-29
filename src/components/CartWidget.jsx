@@ -1,5 +1,5 @@
-import carrito from "../components/carrito.png";
 import React from "react";
+import carrito from "../components/img/carrito.png";
 
 export default function CartWidget() {
 
@@ -7,7 +7,7 @@ export default function CartWidget() {
 
         <> 
             <img src={ carrito }
-            alt="carrito" height="40px" width="40px"/>
+            alt="carrito" height="32px" width="32px"/>
         </>
     
     );
