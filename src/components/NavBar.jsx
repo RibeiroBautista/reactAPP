@@ -1,8 +1,6 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
+import { Button, Nav, Navbar, Container } from 'react-bootstrap';
+import CartWidget from "./CartWidget";
 
 
 export default function NavBar() {
@@ -21,12 +19,16 @@ export default function NavBar() {
                             <Nav.Link href="#Store"><Button variant="outline-primary">Tienda</Button>{' '}</Nav.Link>
                             <Nav.Link href="#Profile"><Button variant="outline-primary">Perfil</Button>{' '}</Nav.Link>
                             <Nav.Link href="#About-Us"><Button variant="outline-primary">Sobre Nosotros</Button>{' '}</Nav.Link>
+                            <h4>BR-Commerse</h4>
+                            <CartWidget />
                         </Nav>
 
                     </Container>
                 </Navbar>
 
             </div>
+
+            
 
         </>
     
