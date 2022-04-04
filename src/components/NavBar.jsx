@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Nav, Navbar, Container } from 'react-bootstrap';
-import CartWidget from "./itemListContainer";
+import CartWidget from "./CartWidget";
 
 export default function NavBar() {
 
@@ -26,6 +26,7 @@ export default function NavBar() {
                 </Navbar>
 
             </div>
+            
 
             
 

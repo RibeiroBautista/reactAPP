@@ -1,8 +1,10 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
+
 import NavBar from "./components/NavBar";
 import Accordeon from "./components/Accordeon";
-import "./App.css"
+import ItemListContainer from "./components/items/ItemListContainer";
 
 export default function App() {
   
@@ -11,6 +13,7 @@ export default function App() {
     <> 
       <NavBar />
       <Accordeon />
+      <ItemListContainer />
     </>
     
   );
