@@ -18,7 +18,6 @@ export default function NavBar() {
                             <Nav.Link href="#Store"><Button variant="outline-primary">Tienda</Button>{' '}</Nav.Link>
                             <Nav.Link href="#Profile"><Button variant="outline-primary">Perfil</Button>{' '}</Nav.Link>
                             <Nav.Link href="#About-Us"><Button variant="outline-primary">Sobre Nosotros</Button>{' '}</Nav.Link>
-                            <h5>W73-Commerse</h5>
                             <CartWidget />
                         </Nav>
 

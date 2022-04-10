@@ -18,16 +18,20 @@ export default function ItemCount({stock}) {
         setCount(` agregaste ${count} a tu carrito `)
     }
 
+    function details () {
+        
+    }
     return (
 
         <> 
             <div className="btns-container">
+            <button onClick={onAdd}>Agregar al Carrito</button>
                 <div className="txt-btns">
                     <button onClick={agregar}>+</button>
                     <span>{count}</span>
                     <button onClick={restar}>-</button>
-                    <button onClick={onAdd}>Add to Cart</button>
                 </div>
+                    <button onClick={details}>Ver Detalles</button>
             </div>
 
         </>

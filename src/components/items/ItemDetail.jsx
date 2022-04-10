@@ -1,25 +1,25 @@
-import React from 'react'
+import React from "react";
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from '../ItemCount'
 import s from '../items/CardBodyClass.module.css';
 
-function Item( { id, nombre, imagen } ) {
-
+const ItemDetail = ( { id, nombre, precio, popularidad, imagen } ) => {
+    
     return (
-
-        <Card key={id} style={{ width: '18rem' }} >
+        <>
+            <Card key={id} style={{ width: '18rem' }} >
             <Card.Img variant="top" src={imagen} width={300} height={300} />
             <Card.Body>
                 <div className={s.cardBodyClass}>
                     <Card.Title>{nombre}</Card.Title>
-                    <ItemCount stock={12} />
+                    <Card.Title>{precio}</Card.Title>
+                    <Card.Title>{popularidad}</Card.Title>
                 </div>
             </Card.Body>
         </Card>
-
+        </>
     )
 
 }
 
-export default Item
+export default ItemDetail;
