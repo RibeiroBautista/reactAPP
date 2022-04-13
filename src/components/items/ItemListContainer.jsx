@@ -6,7 +6,7 @@ import c from '../items/ItemListContainer.module.css';
 import Accordeon from "../Accordeon";
 //import { Link } from "react-router-dom";
 
-export default function ItemListContainer() {
+export default function ItemListContainer({setCount}) {
 
     const [items, setItems] = useState([]);
 
@@ -26,7 +26,7 @@ export default function ItemListContainer() {
                 <Accordeon />
             </div>
             <div className={c.ItmLstCont}>
-                <ItemList productos={items} />
+                <ItemList productos={items} setCount={setCount} />
             </div>
 
         </>    

@@ -1,26 +1,25 @@
 import React, { useState } from "react";
 
-export default function ItemCount({stock}) {
+export default function ItemCount({stock, setCount}) {
 
-    const  [count, setCount] = useState(0);
+    const  [counter, setCounter] = useState(0);
 
     function agregar () {
-            if(count < stock) {
-                setCount(count + 1)
+            if(counter < stock) {
+                setCounter(counter + 1)
             }
     }
     function restar () {
-            if(count > 0) {
-            setCount(count - 1)
+            if(counter > 0) {
+            setCounter(counter - 1)
         }
     }
     function onAdd () {
-        setCount(` agregaste ${count} a tu carrito `)
+        setCount(counter);
+        setCounter(0);
     }
 
-    function details () {
-        
-    }
+
     return (
 
         <> 
@@ -28,10 +27,9 @@ export default function ItemCount({stock}) {
             <button onClick={onAdd}>Agregar al Carrito</button>
                 <div className="txt-btns">
                     <button onClick={agregar}>+</button>
-                    <span>{count}</span>
+                    <span>{counter}</span>
                     <button onClick={restar}>-</button>
                 </div>
-                    <button onClick={details}>Ver Detalles</button>
             </div>
 
         </>

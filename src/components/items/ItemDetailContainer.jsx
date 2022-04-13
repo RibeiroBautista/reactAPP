@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
 import customFetch from "../utils/customFetch";
-import ItemDetailList from "./ItemDetailList";
 import productos from "../utils/productos";
+import { useParams } from "react-router-dom";
+import ItemDetail from './ItemDetail';
 
 export default function ItemDetailContainer() {
-
-    const [details, setDetails] = useState([]);
+    const [detail, setDetail] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
-
         customFetch(2000, productos)
-        .then(resultado => 
-            setDetails(resultado))
-        .catch(error => 
-            console.log(error));
-
-    }, [details])
-
-    console.log(details);
+            .then(resultado => {
+                const productDetail = resultado.find(producto => producto.id === id);
+                setDetail(productDetail);
+            })
+            .catch(error =>
+                console.log(error));
+    }, [id])
 
     return (
         <>
-            <ItemDetailList productos={details}/>
+            <ItemDetail detail={detail}/>
         </>
     )
 

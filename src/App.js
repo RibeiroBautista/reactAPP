@@ -1,5 +1,5 @@
+import React, {useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
@@ -10,28 +10,20 @@ import ItemDetailContainer from "./components/items/ItemDetailContainer";
 //import Tests from "./components/tests/Tests";
 
 export default function App() {
-  
-  function details () {
-        
-  }
+  const [count, setCount] = useState(0);
 
   return (
-
     <> 
       <BrowserRouter>
-
-        <NavBar />
-
-        <Routes>
-          <Route exact path="/" element={<ItemListContainer/>} />
-          <Route exact path="/" element={<Accordeon/>} />
-          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-        </Routes>
-        
-      </BrowserRouter>
-      
-    </>
-    
+        <NavBar count={count}/>
+          <Routes>
+            <Route exact path="/" element={<ItemListContainer setCount={setCount}/>} />
+            <Route exact path="/category/:categoria" element={<ItemListContainer/>} />
+            <Route exact path="/" element={<Accordeon/>} />
+            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          </Routes>
+      </BrowserRouter> 
+    </>  
   );
 }
 
