@@ -3,11 +3,11 @@
 }
 
 .cardBodyClass p {
-    font-size: 30px;
-    border: 2px solid #ffc107;
+    font-size: 20px;
+    border: 2px solid #282c34;
     border-radius: 20px;
-    color: #ff0000;
-    background-color: #282c34;
+    color: #4b3e19;
+    background-color: #ffc107;
     text-decoration: none;
     list-style: none;
 }
@@ -18,7 +18,6 @@
 }
 
 .CardContainer {
-    background-color: darkblue;
     border: 2px solid #ffc107;
     display: flex;
     flex-direction: row;

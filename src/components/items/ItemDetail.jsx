@@ -2,7 +2,7 @@ import React from "react";
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from '../ItemCount'
-import s from '../items/CardBodyClass.module.css';
+import s from '../items/css/CardBodyClass.module.css';
 
 const ItemDetail = ({detail, setCount}) => {
     const  { id, nombre, precio, popularidad, imagen } = detail;

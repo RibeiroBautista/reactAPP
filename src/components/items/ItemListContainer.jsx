@@ -1,34 +1,47 @@
 import React, { useEffect, useState } from "react";
+import { traerProductos } from "../utils/productos";
+import { useParams } from "react-router-dom";
+
 import customFetch from "../utils/customFetch";
-import productos from "../utils/productos";
+
+import c from '../items/css/ItemListContainer.module.css';
 import ItemList from "./ItemList";
-import c from '../items/ItemListContainer.module.css';
-import Accordeon from "../Accordeon";
-//import { Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner'
 
 export default function ItemListContainer({setCount}) {
 
     const [items, setItems] = useState([]);
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true);
+
+    const { categoryId } = useParams()
 
     useEffect(() => {
+        setLoading(true);
+        traerProductos(categoryId)
+            .then((res) => setProductos(res))
+            .catch((error) => console.log(error))
+            .finally(() => {
+                setLoading(false)
+            });
+    }, [categoryId])
 
-        customFetch(2000, productos)
-        .then(resultado => 
-            setItems(resultado))
-        .catch(error => 
-            console.log(error));
-
+    useEffect(() => {
+        setLoading(true);
+        customFetch(2000, items)
+        .then(resultado => setItems(resultado))
+        .catch(error => console.log(error));
     }, [items])
 
     return (
         <> 
-            <div className={c.Accordeon}>
-                <Accordeon />
-            </div>
-            <div className={c.ItmLstCont}>
-                <ItemList productos={items} setCount={setCount} />
-            </div>
-
+            {loading ? (
+                <h1>Cargando Productos, Por Favor Espera...<Spinner animation="border" variant="primary" /></h1>
+            ) : (
+                <div className={c.ItmLstCont}>
+                    <ItemList productos={productos} setCount={setCount} />
+                </div>
+            )}
         </>    
     );
 

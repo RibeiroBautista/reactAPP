@@ -6,7 +6,7 @@ export default function CartWidget({count}) {
 
         <> 
         <div>
-        <h5>W73-Commerse🛒({count})</h5>
+        <h5>🛒({count})</h5>
         </div>
         </>
     

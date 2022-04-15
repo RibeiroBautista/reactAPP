@@ -5,9 +5,8 @@ import "./App.css";
 
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/items/ItemListContainer" 
-import Accordeon from "./components/Accordeon"; 
 import ItemDetailContainer from "./components/items/ItemDetailContainer";
-//import Tests from "./components/tests/Tests";
+import AboutUs from "./components/items/AboutUs";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -17,10 +16,10 @@ export default function App() {
       <BrowserRouter>
         <NavBar count={count}/>
           <Routes>
-            <Route exact path="/" element={<ItemListContainer setCount={setCount}/>} />
-            <Route exact path="/category/:categoria" element={<ItemListContainer/>} />
-            <Route exact path="/" element={<Accordeon/>} />
-            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/" element={<ItemListContainer setCount={setCount}/>} />
+            <Route path="/category/:categoryId" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer setCount={setCount}/>} />
+            <Route path="/wakame/aboutus" element={<AboutUs/>}/>
           </Routes>
       </BrowserRouter> 
     </>  

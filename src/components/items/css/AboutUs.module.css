@@ -1,0 +1,16 @@
+.AboutUsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.Presentacion {
+    background-color: cornflowerblue;
+    padding: 8px;
+    text-align: start;
+}
+
+.AboutUs {
+    background-color: aliceblue;
+    padding: 8px;
+    text-align: start;
+}
