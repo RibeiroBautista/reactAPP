@@ -1,11 +1,35 @@
-import React from "react";
+import React, {useContext, useState} from "react";
+import { CartContext } from "./CartContext";
+/* ---------------------------------------------------- */
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from '../ItemCount'
 import s from '../items/css/CardBodyClass.module.css';
+import productos from "../utils/productos";
 
-const ItemDetail = ({detail, setCount}) => {
-    const  { id, nombre, precio, popularidad, imagen } = detail;
+
+const ItemDetail = ({detail, setCart}) => {
+    const  { id, stock, nombre, precio, popularidad, imagen } = detail;
+
+    let [counter, setCounter] = useState(0);
+    const {addToCart} = useContext(CartContext)
+    const {addedToCart} = useContext(CartContext)
+    const {added} = useContext(CartContext)
+
+    const agregar = () => {
+            if(counter < stock) {
+                setCounter(counter + 1)
+            }
+    }
+    const restar = () => {
+            if(counter > 0) {
+            setCounter(counter - 1)
+        }
+    }
+    const onAdd = () => {
+        setCounter(counter);
+        setCounter(0);
+    }
+
     return (
         <>
         <div className={s.MoveCard}>
@@ -16,8 +40,26 @@ const ItemDetail = ({detail, setCount}) => {
                         <Card.Title><p>Producto: {nombre}</p></Card.Title>
                         <Card.Title><p>Precio: {precio}</p></Card.Title>
                         <Card.Title><p>Popularidad: {popularidad}</p></Card.Title>
+                        <Card.Title><p>Stock Disponible: {stock}</p></Card.Title>
                     </div>
-                        <ItemCount stock={12} setCount={setCount}/>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
+                    <div className="btns-container">
+                    <button onClick={()=> {
+                        counter={counter}
+                        onAdd()
+                        added()
+                        addToCart(...productos, counter)
+                        console.log(addedToCart)
+                    }}
+                    >Agregar al Carrito
+                    </button>
+
+                        <div className="txt-btns">
+                            <button onClick={agregar}>+</button>
+                            <span>{counter}</span>
+                            <button onClick={restar}>-</button>
+                        </div>
+                    </div>
                 </Card.Body>
             </Card>
         </div>

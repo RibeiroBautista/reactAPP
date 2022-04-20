@@ -7,12 +7,13 @@ import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/items/ItemListContainer" 
 import ItemDetailContainer from "./components/items/ItemDetailContainer";
 import AboutUs from "./components/items/AboutUs";
+import CartContextProvider from "./components/items/CartContext";
 
 export default function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <> 
+    <CartContextProvider> 
       <BrowserRouter>
         <NavBar count={count}/>
           <Routes>
@@ -22,7 +23,7 @@ export default function App() {
             <Route path="/wakame/aboutus" element={<AboutUs/>}/>
           </Routes>
       </BrowserRouter> 
-    </>  
+    </CartContextProvider>  
   );
 }
 

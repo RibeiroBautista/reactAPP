@@ -3,6 +3,7 @@ const productos = [
     {    
         category: 'electrodomesticos',
         id: '1',
+        stock: 45,
         nombre: "TV Smart-50'",
         precio: "$99.999,99",
         popularidad: "9,3 | 10,00",
@@ -11,6 +12,7 @@ const productos = [
     {
         category: 'electrodomesticos',
         id: '2',
+        stock: 78,
         nombre: "Notebook Lenovo",
         precio: "$84.999,99",
         popularidad: "8,7 | 10,00",
@@ -19,6 +21,7 @@ const productos = [
     {
         category: 'electrodomesticos',
         id: '3',
+        stock: 102,
         nombre: "Iphone 12 PRO-MAX",
         precio: "$189.200,00",
         popularidad: "9,8 | 10,00",
@@ -28,6 +31,7 @@ const productos = [
     {
         category: 'sillas',
         id: '4',
+        stock: 17,
         nombre: 'MicroBell, Negra y Roja',
         precio: '41.250,00',
         popularidad: '9,8 | 10,00',
@@ -36,6 +40,7 @@ const productos = [
     {
         category: 'sillas',
         id: '5',
+        stock: 13,
         nombre: 'Prestigio, Negra y Celeste',
         precio: '42.100,00',
         popularidad: '9,9 | 10,00',
@@ -44,6 +49,7 @@ const productos = [
     {
         category: 'sillas',
         id: '6',
+        stock: 19,
         nombre: 'Patriot, Blanca y Rosa',
         precio: '46.000,00',
         popularidad: '9,7 | 10,00',
@@ -52,6 +58,7 @@ const productos = [
     {
         category: 'mesas',
         id: '7',
+        stock: 48,
         nombre: 'Escritorio Negro + Luz Led',
         precio: '12.500,00',
         popularidad: '8,4 | 10,00',
@@ -60,6 +67,7 @@ const productos = [
     {
         category: 'mesas',
         id: '8',
+        stock: 39,
         nombre: 'Escritorio Negro y Rojo + Apoyante',
         precio: '12.000,00',
         popularidad: '8,1 | 10,00',
@@ -68,6 +76,7 @@ const productos = [
     {
         category: 'mesas',
         id: '9',
+        stock: 40,
         nombre: 'Escritorio negro y rojo',
         precio: '11.000,00',
         popularidad: '7,9 | 10,00',
@@ -76,6 +85,7 @@ const productos = [
     {
         category: 'gabinetes',
         id: '10',
+        stock: 52,
         nombre: 'Gabinete, MCE blanco',
         precio: '6.850,00',
         popularidad: '8,8 | 10,00',
@@ -84,6 +94,7 @@ const productos = [
     {
         category: 'gabinetes',
         id: '11',
+        stock: 51,
         nombre: 'AEROCOOL BIONIC V2',
         precio: '6.499,99',
         popularidad: '8,6 | 10,00',
@@ -92,6 +103,7 @@ const productos = [
     {
         category: 'gabinetes',
         id: '12',
+        stock: 71,
         nombre: 'Tecware Nexus Evo',
         precio: '7.000,00',
         popularidad: '8,9 | 10,00',
@@ -101,6 +113,7 @@ const productos = [
     {
         category: 'monitores',
         id: '13',
+        stock: 125,
         nombre: 'Zowie Benq 60hz',
         precio: '$78.379,99',
         popularidad: '9,1 | 10,00',
@@ -110,6 +123,7 @@ const productos = [
     {
         category: 'monitores',
         id: '15',
+        stock: 119,
         nombre: 'Zowie Benq 144hz',
         precio: '$143.579,99',
         popularidad: '9,8 | 10,00',
@@ -119,6 +133,7 @@ const productos = [
     {
         category: 'monitores',
         id: '14',
+        stock: 110,
         nombre: 'Zowie Benq 240hz',
         precio: '$205.199,99',
         popularidad: '9,6 | 10,00',

@@ -5,6 +5,7 @@ import s from '../items/css/CardBodyClass.module.css';
 import { Link } from 'react-router-dom';
 
 function Item( { id, nombre, imagen } ) {
+
     return (
         <Card key={id} style={{ width: '18rem' }} >
             <Card.Img variant="top" src={imagen} width={300} height={300} />
