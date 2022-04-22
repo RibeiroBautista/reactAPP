@@ -4,30 +4,26 @@ import { CartContext } from "./CartContext";
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import s from '../items/css/CardBodyClass.module.css';
-import productos from "../utils/productos";
 
-
-const ItemDetail = ({detail, setCart}) => {
+const ItemDetail = ({detail}) => {
     const  { id, stock, nombre, precio, popularidad, imagen } = detail;
 
-    let [counter, setCounter] = useState(0);
+    let [count, setCount] = useState(0);
     const {addToCart} = useContext(CartContext)
-    const {addedToCart} = useContext(CartContext)
-    const {added} = useContext(CartContext)
 
     const agregar = () => {
-            if(counter < stock) {
-                setCounter(counter + 1)
+            if(count < stock) {
+                setCount(count + 1)
             }
     }
     const restar = () => {
-            if(counter > 0) {
-            setCounter(counter - 1)
+            if(count > 0) {
+            setCount(count - 1)
         }
     }
     const onAdd = () => {
-        setCounter(counter);
-        setCounter(0);
+        setCount(count);
+        setCount(0);
     }
 
     return (
@@ -45,18 +41,15 @@ const ItemDetail = ({detail, setCart}) => {
 {/* -------------------------------------------------------------------------------------------------------------------- */}
                     <div className="btns-container">
                     <button onClick={()=> {
-                        counter={counter}
                         onAdd()
-                        added()
-                        addToCart(...productos, counter)
-                        console.log(addedToCart)
+                        addToCart({...detail, count})
                     }}
                     >Agregar al Carrito
                     </button>
 
                         <div className="txt-btns">
                             <button onClick={agregar}>+</button>
-                            <span>{counter}</span>
+                            <span>{count}</span>
                             <button onClick={restar}>-</button>
                         </div>
                     </div>

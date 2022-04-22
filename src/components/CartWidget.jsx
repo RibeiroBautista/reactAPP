@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "./items/CartContext";
 
-export default function CartWidget({count}) {
+export default function CartWidget() {
+
+    const { totalCount } = useContext(CartContext)
 
     return (
 
         <> 
         <div>
-        <h5>🛒({count})</h5>
+            <Link to="/cart">
+                <h5>🛒({totalCount})</h5>
+            </Link>
         </div>
         </>
     

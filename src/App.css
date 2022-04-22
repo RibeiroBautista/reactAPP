@@ -2,6 +2,34 @@ body {
   background-color: #282c34;
 }
 
+.ContCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  color: tomato;
+}
+.algo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid grey;
+  background-color: #d8d8d8;
+  color: tomato;
+  text-align: center;
+}
+.cont-img {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cont-info {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
 
 h1{
   text-align: center;

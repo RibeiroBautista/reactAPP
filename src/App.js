@@ -8,6 +8,8 @@ import ItemListContainer from "./components/items/ItemListContainer"
 import ItemDetailContainer from "./components/items/ItemDetailContainer";
 import AboutUs from "./components/items/AboutUs";
 import CartContextProvider from "./components/items/CartContext";
+import Cart from "./components/items/Cart";
+/* import Tests from "./components/tests/Tests"; */
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -17,10 +19,12 @@ export default function App() {
       <BrowserRouter>
         <NavBar count={count}/>
           <Routes>
-            <Route path="/" element={<ItemListContainer setCount={setCount}/>} />
+            {/* //<Route path="/" element={<Tests/>}/> */}
+            <Route path="/" element={<ItemListContainer/>} />
             <Route path="/category/:categoryId" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer setCount={setCount}/>} />
-            <Route path="/wakame/aboutus" element={<AboutUs/>}/>
+            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/wakame/aboutus" element={<AboutUs/>}/> 
           </Routes>
       </BrowserRouter> 
     </CartContextProvider>  
