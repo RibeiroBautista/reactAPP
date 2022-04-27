@@ -58,9 +58,6 @@ export default function NavBar({count}) {
                                     <Link style= {{margin: '0px 10px'}} to="/wakame/aboutus">
                                         <Button variant="secondary">Sobre Nosotros</Button>{' '}
                                     </Link>
-                                    <Link to="/wakame/contactsus">
-                                        <Button variant="secondary">Contactanos</Button>{' '}
-                                    </Link>
                                 <CartWidget count={count}/>
                         </Nav>
                     </Container>

@@ -5,16 +5,10 @@ import { CartContext } from "./items/CartContext";
 export default function CartWidget() {
 
     const { totalCount } = useContext(CartContext)
+    const { empty } = useContext(CartContext)
 
-    return (
-
-        <> 
-        <div>
-            <Link to="/cart">
-                <h5>🛒({totalCount})</h5>
-            </Link>
-        </div>
-        </>
-    
-    );
+    return(
+        <Link to='/cart'>
+        {empty === true ? <h5>🛒</h5> : <h5>🛒({totalCount})</h5>}
+        </Link>);
 }

@@ -12,7 +12,7 @@ function Item( { id, nombre, imagen } ) {
             <Card.Body>
                 <div className={s.cardBodyClass}>
                     <p>{nombre}</p>
-                    <Link to={`/item/${id}`}>Ver Detalle</Link>
+                    <Link to={`/item/${id}`}>Ver Detalles de Producto</Link>
                 </div>
             </Card.Body>
         </Card>

@@ -1,22 +1,38 @@
 body {
-  background-color: #282c34;
+  background-color: #fffa;
 }
-
+a{
+  text-decoration: none;
+  color: #282c34;
+}
 .ContCart {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  color: tomato;
+  color: #282c34;
 }
 .algo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid grey;
-  background-color: #d8d8d8;
-  color: tomato;
+  border: 1px solid #969696;
+  background-color: #fffa;
+  color: #282c34;
   text-align: center;
+  box-shadow: 0px 0px 10px 1px #969696;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.card{
+  box-shadow: 0px 0px 10px 1px #969696;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.card:hover{
+  transition: all 0.3s;
+  box-shadow: 0px 0px 10px 1px black;
 }
 .cont-img {
   width: 300px;

@@ -4,16 +4,16 @@ export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
 
-    
     const [cart, setCart] = useState([]);
     const [totalCount, setTotalCount] = useState(0);
-    const [addedToCart, setAddedToCart] = useState(false)
+    const [empty, setEmpty] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     const calcCount = () => {
         
         let total = 0;
         cart.forEach(item => {
-        total += item.count;
+            total += item.count;
         });
         setTotalCount(total);
 
@@ -22,7 +22,7 @@ const CartContextProvider = ({ children }) => {
 
     useEffect(()=>{
         calcCount()
-        console.log(cart)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart])
 
     const addToCart = (item) => {
@@ -35,16 +35,13 @@ const CartContextProvider = ({ children }) => {
             setCart([ ...cart, item ]);
         }
     }
-    const added = () => {
-        setAddedToCart(true)
-    }
     const removeFromCart = (id) => {
         setCart(cart.filter(detail=>detail.id !== id))
     };
     const buyAll = () => setCart([]);
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, buyAll, addedToCart, added, totalCount }}>
+        <CartContext.Provider value={{ loading, setLoading, cart, addToCart, removeFromCart, buyAll, totalCount, empty, setEmpty }}>
         {children}
         </CartContext.Provider>
     );

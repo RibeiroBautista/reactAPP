@@ -10,6 +10,7 @@ const ItemDetail = ({detail}) => {
 
     let [count, setCount] = useState(0);
     const {addToCart} = useContext(CartContext)
+    const { setEmpty } = useContext(CartContext)
 
     const agregar = () => {
             if(count < stock) {
@@ -24,6 +25,7 @@ const ItemDetail = ({detail}) => {
     const onAdd = () => {
         setCount(count);
         setCount(0);
+        setEmpty(false)
     }
 
     return (
@@ -31,8 +33,8 @@ const ItemDetail = ({detail}) => {
         <div className={s.MoveCard}>
             <Card key={id} className={s.CardContainer}>
                 <Card.Img variant="top" src={imagen} width={'300px'} height={'450px'} />
-                <Card.Body>
-                    <div className={s.cardBodyClass}>
+                <Card.Body className={s.cardBodyClass}>
+                    <div>
                         <Card.Title><p>Producto: {nombre}</p></Card.Title>
                         <Card.Title><p>Precio: {precio}</p></Card.Title>
                         <Card.Title><p>Popularidad: {popularidad}</p></Card.Title>

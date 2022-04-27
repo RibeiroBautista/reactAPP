@@ -1,36 +1,40 @@
-import React, {  useContext } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext'
 
 const Cart = () => {
 
-    const { cart, buyAll, removeFromCart } = useContext(CartContext)
+    const { cart, removeFromCart, empty, setEmpty } = useContext(CartContext)
 
     return (
         <>
+        {empty === true 
+            ?
             <div className='ContCart'>
-                <Link to='/'><button>Seguir Comprando</button></Link>
-                <h2>Productos Seleccionados: {cart.length}</h2>
-            {cart.length > 0 &&
-            cart.map((detail) => (
-                <div className='algo'>
-                    <div className='cont-img'>
-                        <div className='images'><img src={detail.imagen} alt="Tv-Smart 50'" width='300px' height='300px'/></div>
-                    </div>
-                    <div className='cont-info'>
-                        <div>{detail.nombre}</div>
-                        <div>{detail.popularidad}: De Popularidad</div>
-                        <div>{detail.precio} x {detail.count}</div>
-                        <div>{detail.count} Productos Agregados</div>
-                        <div>{detail.stock} Productos Disponibles</div>
-                        <button onClick={()=>removeFromCart(detail.id)}>Remove</button>
-                    </div>
-                </div>
-            ))}
-            <button onClick={buyAll}>Comprar Todo</button>
+                <h1>El Carrito está vacío</h1>
+                <Link to='/'><button>Seguir Comprando</button></Link> 
             </div>
-        
-        </>
-    )}
+            : 
+                <div className='ContCart'>
+                    <h2>Productos Agregados: {cart.length}</h2>
+                    {cart.length > 0 &&
+                    cart.map((detail) => (
+                        <div className='algo'>
+                            <div className='cont-img'>
+                                <div className='images'><img src={detail.imagen} alt="Tv-Smart 50'" width='300px' height='300px'/></div>
+                            </div>
+                            <div className='cont-info'>
+                                <div>{detail.nombre}</div>
+                                <div>Precio: {detail.precio}</div>
+                                <div>{detail.count} Productos</div>
+                                <div>Stock: {detail.stock} Productos Disponibles</div>
+                                <button onClick={()=>removeFromCart(detail.id)}>Remove</button>
+                            </div>
+                        </div>
+                        ))}
+            <Link to='/'><button onClick={setEmpty()}>Seguir Comprando</button></Link> 
+                </div>}
+        </>)
+    }
 
 export default Cart;
