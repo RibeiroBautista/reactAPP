@@ -1,4 +1,4 @@
-const productos = [
+/* const productos = [
 
     {    
         category: 'electrodomesticos',
@@ -154,4 +154,4 @@ export const traerProductos = (categoryId) => {
     });
 };
 
-export default productos
+export default productos */

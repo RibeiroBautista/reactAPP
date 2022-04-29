@@ -25,31 +25,31 @@ export default function NavBar({count}) {
                                 <Dropdown.Menu variant="dark">
 
                                     <Dropdown.Item >
-                                    <Link to="/category/sillas">
+                                    <Link to="/categoria/sillas">
                                         <Button variant="secondary">sillas</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 
                                     <Dropdown.Item >
-                                    <Link to="/category/mesas">
+                                    <Link to="/categoria/mesas">
                                         <Button variant="secondary">mesas</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 
                                     <Dropdown.Item >
-                                    <Link to="/category/gabinetes">
+                                    <Link to="/categoria/gabinetes">
                                         <Button variant="secondary">gabinetes</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 
                                     <Dropdown.Item >
-                                    <Link to="/category/monitores">
+                                    <Link to="/categoria/monitores">
                                         <Button variant="secondary">monitores</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 
                                     <Dropdown.Item variant="dark">
-                                    <Link to="/category/electrodomesticos">
+                                    <Link to="/categoria/electrodomesticos">
                                         <Button variant="secondary">electrodomesticos</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>

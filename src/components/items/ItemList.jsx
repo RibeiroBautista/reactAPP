@@ -9,7 +9,7 @@ function ItemList( { productos, setCount } ) {
             key={p.id}
             id={p.id}
             nombre={p.nombre}
-            imagen={p.imagen}
+            imagen={p.img}
             setCount={setCount}
             />
         ))

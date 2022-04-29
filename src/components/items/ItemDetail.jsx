@@ -5,10 +5,10 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import s from '../items/css/CardBodyClass.module.css';
 
-const ItemDetail = ({detail}) => {
-    const  { id, stock, nombre, precio, popularidad, imagen } = detail;
+const ItemDetail = ({ producto }) => {
+    const  { id, stock, nombre, precio, popularidad, img } = producto;
 
-    let [count, setCount] = useState(0);
+    let [count, setCount] = useState(1);
     const {addToCart} = useContext(CartContext)
     const { setEmpty } = useContext(CartContext)
 
@@ -18,7 +18,7 @@ const ItemDetail = ({detail}) => {
             }
     }
     const restar = () => {
-            if(count > 0) {
+            if(count > 1) {
             setCount(count - 1)
         }
     }
@@ -32,7 +32,7 @@ const ItemDetail = ({detail}) => {
         <>
         <div className={s.MoveCard}>
             <Card key={id} className={s.CardContainer}>
-                <Card.Img variant="top" src={imagen} width={'300px'} height={'450px'} />
+                <Card.Img variant="top" src={img} width={'300px'} height={'450px'} />
                 <Card.Body className={s.cardBodyClass}>
                     <div>
                         <Card.Title><p>Producto: {nombre}</p></Card.Title>
@@ -44,7 +44,7 @@ const ItemDetail = ({detail}) => {
                     <div className="btns-container">
                     <button onClick={()=> {
                         onAdd()
-                        addToCart({...detail, count})
+                        addToCart({...producto, count})
                     }}
                     >Agregar al Carrito
                     </button>

@@ -21,7 +21,7 @@ const Cart = () => {
                     cart.map((detail) => (
                         <div className='algo'>
                             <div className='cont-img'>
-                                <div className='images'><img src={detail.imagen} alt="Tv-Smart 50'" width='300px' height='300px'/></div>
+                                <div className='images'><img src={detail.img} alt={detail.nombre} width='300px' height='300px'/></div>
                             </div>
                             <div className='cont-info'>
                                 <div>{detail.nombre}</div>

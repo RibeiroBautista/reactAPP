@@ -5,11 +5,10 @@ import "./App.css";
 
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/items/ItemListContainer" 
-import ItemDetailContainer from "./components/items/ItemDetailContainer";
 import AboutUs from "./components/items/AboutUs";
 import CartContextProvider from "./components/items/CartContext";
 import Cart from "./components/items/Cart";
-import TestFormulario from "./components/tests/TestFormulario";
+import ItemDetailContainer from "./components/items/ItemDetailContainer";
 /* import Tests from "./components/tests/Tests"; */
 
 export default function App() {
@@ -22,11 +21,10 @@ export default function App() {
           <Routes>
             {/* //<Route path="/" element={<Tests/>}/> */}
             <Route path="/" element={<ItemListContainer/>} />
-            <Route path="/category/:categoryId" element={<ItemListContainer />} />
+            <Route path="/categoria/:id" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer setCount={setCount}/>} />
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/wakame/aboutus" element={<AboutUs/>}/> 
-            <Route path="/testFormulario" element={<TestFormulario/>}/> 
           </Routes>
       </BrowserRouter> 
     </CartContextProvider>  
