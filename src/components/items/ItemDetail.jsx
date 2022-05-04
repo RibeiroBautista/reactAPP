@@ -3,14 +3,12 @@ import { CartContext } from "./CartContext";
 /* ---------------------------------------------------- */
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import s from '../items/css/CardBodyClass.module.css';
 
 const ItemDetail = ({ producto }) => {
-    const  { id, stock, nombre, precio, popularidad, img } = producto;
+    const  { stock, nombre, precio, popularidad, img } = producto;
 
     let [count, setCount] = useState(1);
-    const {addToCart} = useContext(CartContext)
-    const { setEmpty } = useContext(CartContext)
+    const {addToCart, totalPrice } = useContext(CartContext)
 
     const agregar = () => {
             if(count < stock) {
@@ -24,42 +22,42 @@ const ItemDetail = ({ producto }) => {
     }
     const onAdd = () => {
         setCount(count);
-        setCount(0);
-        setEmpty(false)
+        setCount(1);
     }
 
     return (
         <>
-        <div className={s.MoveCard}>
-            <Card key={id} className={s.CardContainer}>
+        <div className='MoveCard'>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
+            <div className='CardContainer'>
                 <Card.Img variant="top" src={img} width={'300px'} height={'450px'} />
-                <Card.Body className={s.cardBodyClass}>
+                <Card.Body className='cardBodyClass'>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
                     <div>
-                        <Card.Title><p>Producto: {nombre}</p></Card.Title>
-                        <Card.Title><p>Precio: {precio}</p></Card.Title>
-                        <Card.Title><p>Popularidad: {popularidad}</p></Card.Title>
-                        <Card.Title><p>Stock Disponible: {stock}</p></Card.Title>
+                        <Card.Title><p>Product: {nombre}</p></Card.Title>
+                        <Card.Title><p>Price: $ {precio}</p></Card.Title>
+                        <Card.Title><p>Popularity: {popularidad}</p></Card.Title>
+                        <Card.Title><p>Stock Available: {stock}</p></Card.Title>
                     </div>
 {/* -------------------------------------------------------------------------------------------------------------------- */}
-                    <div className="btns-container">
-                    <button onClick={()=> {
-                        onAdd()
-                        addToCart({...producto, count})
-                    }}
-                    >Agregar al Carrito
-                    </button>
-
-                        <div className="txt-btns">
-                            <button onClick={agregar}>+</button>
-                            <span>{count}</span>
-                            <button onClick={restar}>-</button>
-                        </div>
+                    <div className='txt-btns'>
+                        <button onClick={agregar}>+</button>
+                        <span>{count}</span>
+                        <button onClick={restar}>-</button>
                     </div>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
+                    <div className='btns-container'>
+                        <button onClick={()=> {
+                            onAdd()
+                            addToCart({...producto, count, totalPrice})
+                        }}>Add To Cart</button>
+                    </div>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
                 </Card.Body>
-            </Card>
+            </div>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
         </div>
         </>
-    )
-}
+)}
 
 export default ItemDetail;

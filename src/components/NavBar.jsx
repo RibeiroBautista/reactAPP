@@ -7,63 +7,67 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 export default function NavBar({count}) {
 
-    return (
+return (
         <> 
             <div>
 
                 <Navbar>
                     <Container>
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                         <Link to="/"> <Navbar.Brand href="#home"><Button variant="outline-warning">Wakame'73</Button></Navbar.Brand></Link>
-
                         <Nav className="justify-content-end align-items-center">
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                             <Dropdown>
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-                                    Categorías
+                                    Categories
                                 </Dropdown.Toggle>
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Dropdown.Menu variant="dark">
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/sillas">
-                                        <Button variant="secondary">sillas</Button>{' '}
+                                        <Button variant="secondary">Chairs</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/mesas">
-                                        <Button variant="secondary">mesas</Button>{' '}
+                                        <Button variant="secondary">Tables</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/gabinetes">
-                                        <Button variant="secondary">gabinetes</Button>{' '}
+                                        <Button variant="secondary">Cabinets</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/monitores">
-                                        <Button variant="secondary">monitores</Button>{' '}
+                                        <Button variant="secondary">Monitors</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
-
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item variant="dark">
                                     <Link to="/categoria/electrodomesticos">
-                                        <Button variant="secondary">electrodomesticos</Button>{' '}
+                                        <Button variant="secondary">Electrical Appliances</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                 </Dropdown.Menu>
                             </Dropdown>
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Link style= {{margin: '0px 10px'}} to="/wakame/aboutus">
-                                        <Button variant="secondary">Sobre Nosotros</Button>{' '}
+                                        <Button variant="secondary">About Us</Button>{' '}
                                     </Link>
                                 <CartWidget count={count}/>
+{/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                         </Nav>
                     </Container>
                 </Navbar>
             </div>
         </>
     
-    );
-}
+)}
+

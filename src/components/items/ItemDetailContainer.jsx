@@ -14,19 +14,18 @@ export default function ItemDetailContainer({setCount}) {
         setLoading(true)
         const db = getFirestore();
         const productoRef = doc(db, "productos", id)
-        console.log(id, productoRef)
         getDoc(productoRef).then((res)=>{
-            console.log(res.data(), 'data')
             setProducto({ ...res.data(), id: res.id});
             setLoading(false)
         })
         
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
     return (
         <>
         {loading ? (
-            <h1>Cargando Producto, Por Favor Espera...<Spinner animation="border" variant="primary" /></h1>
+            <h1>Loading Product, Please Wait...<Spinner animation="border" variant="primary" /></h1>
         ) : (
             <div>
                 <ItemDetail producto={producto} setCount={setCount}/>

@@ -6,8 +6,11 @@ const CartContextProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
     const [totalCount, setTotalCount] = useState(0);
-    const [empty, setEmpty] = useState(true)
     const [loading, setLoading] = useState(false)
+
+    const totalPrice = cart.reduce(
+        (total, item) => total + item.count * item.precio, 0
+    );
 
     const calcCount = () => {
         
@@ -18,7 +21,6 @@ const CartContextProvider = ({ children }) => {
         setTotalCount(total);
 
     }
-    console.log()
 
     useEffect(()=>{
         calcCount()
@@ -41,7 +43,7 @@ const CartContextProvider = ({ children }) => {
     const buyAll = () => setCart([]);
 
     return (
-        <CartContext.Provider value={{ loading, setLoading, cart, addToCart, removeFromCart, buyAll, totalCount, empty, setEmpty }}>
+        <CartContext.Provider value={{ loading, setLoading, cart, addToCart, removeFromCart, buyAll, totalCount, totalPrice }}>
         {children}
         </CartContext.Provider>
     );

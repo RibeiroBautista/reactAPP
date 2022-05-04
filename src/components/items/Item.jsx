@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import s from '../items/css/CardBodyClass.module.css';
 import { Link } from 'react-router-dom';
 
 function Item( { id, nombre, imagen } ) {
@@ -10,10 +9,12 @@ function Item( { id, nombre, imagen } ) {
         <Card key={id} style={{ width: '18rem' }} >
             <Card.Img variant="top" src={imagen} width={300} height={300} />
             <Card.Body>
-                <div className={s.cardBodyClass}>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
+                <div className='itemList'>
                     <p>{nombre}</p>
-                    <Link to={`/item/${id}`}>Ver Detalles de Producto</Link>
+                    <Link to={`/item/${id}`}>View Details Of Product</Link>
                 </div>
+{/* -------------------------------------------------------------------------------------------------------------------- */}
             </Card.Body>
         </Card>
 

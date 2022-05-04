@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import { useParams } from "react-router-dom";
 
-import c from '../items/css/ItemListContainer.module.css';
 import ItemList from "./ItemList";
 import { CartContext } from "./CartContext";
 import Spinner from 'react-bootstrap/Spinner'
@@ -17,27 +16,28 @@ export default function ItemListContainer({setCount}) {
         setLoading(true)
         const db = getFirestore();
         
-        let productosRef;
+        let productsRef;
         if(!id){
-            productosRef = collection(db, "productos")
+            productsRef = collection(db, "productos")
         }else {
-            productosRef = query(collection(db, "productos"), where('categoria', '==', id))
+            productsRef = query(collection(db, "productos"), where('categoria', '==', id))
         }
         
-        getDocs(productosRef)
+        getDocs(productsRef)
         .then((res)=>{
             setProductos(res.docs.map((item) => ({ ...item.data(), id: item.id})));
             setLoading(false)
         });
         
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
     return (
         <>
         {loading ? (
-            <h1>Cargando Productos, Por Favor Espera...<Spinner animation="border" variant="primary" /></h1>
+            <h1>Loading Products, Please Wait...<Spinner animation="border" variant="primary" /></h1>
         ) : (
-            <div className={c.ItmLstCont}>
+            <div className='ItmLstCont'>
                 <ItemList productos={productos} setCount={setCount} />
             </div>
             )}
