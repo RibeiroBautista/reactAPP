@@ -9,17 +9,20 @@ export default function NavBar({count}) {
 
 return (
         <> 
-            <div>
-
+            <div className="NavBar-Nav">
                 <Navbar>
                     <Container>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
-                        <Link to="/"> <Navbar.Brand href="#home"><Button variant="outline-warning">Wakame'73</Button></Navbar.Brand></Link>
+                        <Link to="/">
+                            <Navbar.Brand href="#home">
+                                <Button variant="outline-warning">Wakame'73</Button>
+                            </Navbar.Brand>
+                        </Link>
                         <Nav className="justify-content-end align-items-center">
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                             <Dropdown>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
-                                <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
+                                <Dropdown.Toggle id="dropdown-button-dark-example1" variant="outline-warning">
                                     Categories
                                 </Dropdown.Toggle>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
@@ -27,31 +30,31 @@ return (
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/sillas">
-                                        <Button variant="secondary">Chairs</Button>{' '}
+                                        <Button variant="outline-warning">Chairs</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/mesas">
-                                        <Button variant="secondary">Tables</Button>{' '}
+                                        <Button variant="outline-warning">Tables</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/gabinetes">
-                                        <Button variant="secondary">Cabinets</Button>{' '}
+                                        <Button variant="outline-warning">Cabinets</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item >
                                     <Link to="/categoria/monitores">
-                                        <Button variant="secondary">Monitors</Button>{' '}
+                                        <Button variant="outline-warning">Monitors</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Dropdown.Item variant="dark">
                                     <Link to="/categoria/electrodomesticos">
-                                        <Button variant="secondary">Electrical Appliances</Button>{' '}
+                                        <Button variant="outline-warning">Electrical Appliances</Button>{' '}
                                     </Link>
                                     </Dropdown.Item>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
@@ -59,7 +62,7 @@ return (
                             </Dropdown>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}
                                     <Link style= {{margin: '0px 10px'}} to="/wakame/aboutus">
-                                        <Button variant="secondary">About Us</Button>{' '}
+                                        <Button variant="outline-warning">About Us</Button>{' '}
                                     </Link>
                                 <CartWidget count={count}/>
 {/* ----------------------------------------------------------------------------------------------------------------------------------- */}

@@ -25,7 +25,9 @@ export default function ItemDetailContainer({setCount}) {
     return (
         <>
         {loading ? (
-            <h1>Loading Product, Please Wait...<Spinner animation="border" variant="primary" /></h1>
+            <div className="loading-background">
+                <h1>Loading Product, Please Wait...<Spinner animation="border" variant="primary" /></h1>
+            </div>
         ) : (
             <div>
                 <ItemDetail producto={producto} setCount={setCount}/>

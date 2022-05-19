@@ -35,10 +35,14 @@ export default function ItemListContainer({setCount}) {
     return (
         <>
         {loading ? (
-            <h1>Loading Products, Please Wait...<Spinner animation="border" variant="primary" /></h1>
+            <div className="loading-background">
+                <h1>Loading Products, Please Wait...<Spinner animation="border" variant="primary" /></h1>
+            </div>
         ) : (
-            <div className='ItmLstCont'>
-                <ItemList productos={productos} setCount={setCount} />
+            <div>
+                <div className='ItmLstCont'>
+                    <ItemList productos={productos} setCount={setCount} />
+                </div>
             </div>
             )}
         </>

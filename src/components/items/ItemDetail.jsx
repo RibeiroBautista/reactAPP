@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ItemDetail = ({ producto }) => {
-    const  { stock, nombre, precio, popularidad, img } = producto;
+    const  { stock, nombre, precio, popularidad, img, descripcion } = producto;
 
     let [count, setCount] = useState(1);
     const {addToCart, totalPrice } = useContext(CartContext)
@@ -33,17 +33,23 @@ const ItemDetail = ({ producto }) => {
                 <Card.Img variant="top" src={img} width={'300px'} height={'450px'} />
                 <Card.Body className='cardBodyClass'>
 {/* -------------------------------------------------------------------------------------------------------------------- */}
-                    <div>
-                        <Card.Title><p>Product: {nombre}</p></Card.Title>
-                        <Card.Title><p>Price: $ {precio}</p></Card.Title>
-                        <Card.Title><p>Popularity: {popularidad}</p></Card.Title>
-                        <Card.Title><p>Stock Available: {stock}</p></Card.Title>
-                    </div>
-{/* -------------------------------------------------------------------------------------------------------------------- */}
-                    <div className='txt-btns'>
-                        <button onClick={agregar}>+</button>
-                        <span>{count}</span>
-                        <button onClick={restar}>-</button>
+                    <div className="details">
+                        <p>Product: <strong>{nombre}</strong></p>
+                        <p>Description: <strong>{descripcion}</strong></p>
+                        <p>Price: $ <strong>{precio}</strong></p>
+                        <p>Popularity: <strong>{popularidad}</strong></p>
+                        <p>Stock Available: <strong>{stock}</strong></p>
+                        <div className='txt-btns'>
+                            <button 
+                            onClick={agregar}
+                            className='agregar'
+                            >+</button>
+                            <span>{count}</span>
+                            <button 
+                            onClick={restar}
+                            className='restar'
+                            >-</button>
+                        </div>
                     </div>
 {/* -------------------------------------------------------------------------------------------------------------------- */}
                     <div className='btns-container'>

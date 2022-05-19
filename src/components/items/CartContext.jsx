@@ -42,8 +42,20 @@ const CartContextProvider = ({ children }) => {
     };
     const buyAll = () => setCart([]);
 
+    function getCurrentDate(separator='/'){
+
+        let newDate = new Date()
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
+        let hour = newDate.getHours();
+        let minute = newDate.getMinutes();
+        
+        return `${date}${separator}${month<10?`0${month}`:`${month}`}${separator}${year}${separator}${hour}:${minute<10?`0${minute}`:`${minute}`}`
+        }
+
     return (
-        <CartContext.Provider value={{ loading, setLoading, cart, addToCart, removeFromCart, buyAll, totalCount, totalPrice }}>
+        <CartContext.Provider value={{ loading, setLoading, cart, addToCart, removeFromCart, buyAll, totalCount, totalPrice, getCurrentDate }}>
         {children}
         </CartContext.Provider>
     );

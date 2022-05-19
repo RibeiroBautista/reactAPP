@@ -1,13 +1,22 @@
 body {
-  background-color: #fffa;
-  h1{
-    text-align: center;
-    color: #61dafb;
-  }
+  background-color: #3e5f8a;
+  font-family: 'Koulen', cursive;
   a{
+    padding: 3px;
     text-decoration: none;
     color: #282c34;
   }
+}
+
+.carousel-inner img {
+  width: auto;
+  height: 400px;
+}
+
+.loading-background{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -16,6 +25,15 @@ body {
 
 .cardBodyClass {
   text-align: center;
+  .details{
+    width: 300px;
+    p {
+      cursor: default;
+    }
+    span {
+      cursor: default;
+    }
+  }
 }
 
 .card{
@@ -45,6 +63,7 @@ body {
       color: #4b3e19;
       background-color: #ffc107;
       text-align: center;
+      cursor: default;
     }
   }
 }
@@ -59,6 +78,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: white;
     span {
       color: #282c34;
       text-align: center;
@@ -68,9 +88,17 @@ body {
       justify-content: center;
       flex-direction: column-reverse;
       align-items: center;
+      button{
+        background: none;
+        border: transparent 2px solid;
+        &:hover{
+          border: #0075FF 2px solid;
+          background: lightgreen;
+        }
+      }
     }
     .txt-btns {
-      width: 200px;
+      width: 300px;
       display: flex;
       flex-direction: row;
       border: black 2px solid;
@@ -79,7 +107,13 @@ body {
       align-items: center;
       justify-content: center;
       padding: 4px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      .restar:hover{
+        background: #e66465;
+      }
+      .agregar:hover{
+        background: lightgreen;
+      }
     }
     .txt-btns button {
       margin-left: 15px;
@@ -116,6 +150,16 @@ body {
   align-items: center;
   padding: 15px;
   color: #282c34;
+  a {
+    button{
+      border: transparent 2px solid;
+      background: transparent;
+      &:hover{
+        border: #282c34 2px solid;
+        background: #969696;
+      }
+    }
+  }
   .algo {
     display: flex;
     flex-direction: row;
@@ -144,32 +188,157 @@ body {
         border: #282c34 1px solid;
         margin-bottom: 10px;
         max-width: 200px;
+        cursor: default;
       }
       button {
         margin-top: 10px;
+        border: none;
+        background: none;
+        &:hover{
+          border-color: pink;
+          background: linear-gradient(#ed5a5a, #e66465);
+        }
       }
     }
   }
 }
 
 .contanier-form {
+  background-color: rgba(255, 255, 255, 0.6666666667);
   padding: 30px;
   margin-top: 30px;
   border: #969696 1px solid;
   box-shadow: 0px 0px 10px 1px #969696;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   align-content: center;
+  .succesfully{
+    display: flex;
+    flex-direction: column;
+    color: blue;
+    align-items: stretch;
+    p{margin-bottom: 0px;}
+    button{
+      background: lightcyan;
+      &:hover{background: linear-gradient(lightsteelblue, lightblue);}
+    }
+  }
+  .veryfying{
+    color: #c13737;
+  }
   .inputs {
     text-align: center;
     color: #282c34;
     padding-bottom: 20px;
     border-bottom: #969696 solid 1px;
+    .full-name{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      input{
+        border: none;
+        padding: 8px;
+        &:focus {
+          border: 2px solid #0075FF;
+          outline: none;
+          box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+        }
+      }
+    }
+    .phone{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      input{
+        border: none;
+        padding: 8px;
+        &:focus {
+          border: 2px solid #0075FF;
+          outline: none;
+          box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+        }
+      }
+    }
+    .email{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      input{
+        border: none;
+        padding: 8px;
+        &:focus {
+          border: 2px solid #0075FF;
+          outline: none;
+          box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+        }
+      }
+    }
+    p {
+      text-align: left;
+      color: #c13737;
+      padding: 0px;
+      margin: 0px;
+    }
   }
   .order {
     padding-top: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      color: #575757;
+    }
+    button {
+      border: transparent 2px solid;
+      background: transparent;
+      &:hover{
+        border: #0075FF 2px solid;
+        background: lightgreen;
+      }
+      a:hover {
+        border: #0075FF 2px solid;
+        background: lightgreen;
+        border-radius: 10px;
+      }
+    }
   }
+}
+
+@media (min-width: 300px) and (max-width: 375px){
+
+  .loading-background h1{
+    font-size: 19px;
+    color: #0075FF;
+  }
+
+  .NavBar-Nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    button{
+      font-size: 8px;
+    }
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 800px){
+
+  .MoveCard{
+    .CardContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .ContCart{
+    .algo{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
 }
